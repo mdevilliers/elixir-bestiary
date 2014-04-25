@@ -8,7 +8,6 @@ defmodule Geom do
 
 	@doc """
 		Calculates the area of a rectangle, triangle, ellipse
-		All values default to 1
 	"""
 
 	@spec area(atom(), number(), number()) :: number()
@@ -24,5 +23,9 @@ defmodule Geom do
 
 	def area( :ellipse, x , y) when x >= 0 and y >= 0 do
 		:math.pi() * x * y
+	end
+
+	def area( _,_,_ )do
+		0
 	end
 end
