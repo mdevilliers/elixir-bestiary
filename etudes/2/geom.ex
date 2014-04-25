@@ -1,5 +1,5 @@
 defmodule Geom do
-	def area(x,y \\ 1) do
+	def area(x \\ 1 ,y \\ 1) do
 		x * y
 	end
 end
