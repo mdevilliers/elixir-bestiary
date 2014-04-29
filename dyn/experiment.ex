@@ -1,7 +1,9 @@
 defmodule Experiment do        
 	def dyn (str) do                                                         
-		try do                                                                         Code.compile_string str 
-		rescue                                                                     	e in CompileError -> e
+		try do                                                                         
+		   Code.compile_string str 
+		rescue
+		   e in CompileError -> e
 		end
 	end
 end
