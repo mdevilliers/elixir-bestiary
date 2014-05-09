@@ -1,20 +1,30 @@
 defmodule TrieViewer do
 
 	def make_demo() do
-		numbers = ["01382665872","01382665666", "01382665801", "07967642801"]
+		numbers = create_dummy_numbers()
 		trie = :btrie.new()
 
 		numbers_as_tries = Enum.map numbers, fn(x) -> findtries(x) end
 		flattened = List.flatten numbers_as_tries
-		iterate_and_append_numbers(flattened, 0, trie)
+		iterate_and_store_numbers(flattened, 0, trie)
 	end
 
-	defp iterate_and_append_numbers([], _, btrie) do
-		btrie
+	defp iterate_and_store_numbers([], _, data) do
+		data
 	end
-	defp iterate_and_append_numbers([h|t], count, btrie) do
-		tr = :btrie.append(h, count, btrie)
-		iterate_and_append_numbers(t, count+1, tr)
+
+	defp iterate_and_store_numbers([h|t], count, data) do
+		data1 = :btrie.append(h, count, data)
+		iterate_and_store_numbers(t, count+1, data1)
+	end
+
+	defp create_dummy_numbers() do
+		range = 1..5000
+		Enum.reduce range, [], fn(x, acc) -> [:erlang.integer_to_binary( get_dummy_number(1382000000)) | acc] end
+	end
+
+	defp get_dummy_number(additional) do
+		:random.uniform( 10000000 + additional)
 	end
 
 	def findtries(str) do
