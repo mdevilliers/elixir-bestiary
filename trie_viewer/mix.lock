@@ -1,0 +1,1 @@
+%{"trie": {:git, "https://github.com/okeuday/trie.git", "eee04dc0ba193fb3e47afd5ad97119b938552523", [tag: "v1.3.1"]}}
