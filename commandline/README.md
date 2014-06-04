@@ -1,4 +1,6 @@
 Ls
 ==
 
-** TODO: Add description **
+mix escriptize
+./ls --dir .
+
