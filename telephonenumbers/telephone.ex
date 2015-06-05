@@ -13,11 +13,12 @@ defmodule Telephone do
 		findtries([], acc)
 	end
 
-	defp findtries(<< a:: [size(8), bitstring], b:: [size(8), bitstring], c:: [size(8), bitstring], t:: binary >>,acc) do
+	defp findtries(<< a::binary-size(1), b::binary-size(1), c::binary-size(1), t::binary >> ,acc) do
 		trie = a <> b <> c
 		findtries( b <> c <> t , [trie | acc] )
 	end
 
 end
 
+ # Telephone.findtries("123456789") # ["789", "678", "567", "456", "345", "234", "123"]
 
