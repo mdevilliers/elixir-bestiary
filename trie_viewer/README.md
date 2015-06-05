@@ -1,3 +1,0 @@
-# TrieViewer
-
-** TODO: Add description **
