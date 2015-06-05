@@ -9,4 +9,3 @@ defmodule Experiment do
 end
 
 # c = Experiment.dyn "defmodule A  do\n def a do\n5\nend\nend" 
-# A.a
