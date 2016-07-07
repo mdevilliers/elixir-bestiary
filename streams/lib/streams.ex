@@ -20,7 +20,6 @@ defmodule Gateway do
 
 end
 
-
 defmodule ResultStream do
 
   def new(url) do
@@ -55,3 +54,9 @@ defmodule ResultStream do
 
 end
 
+defmodule Thingful do
+
+    def query_by_keyword(keyword) do
+        ResultStream.new( "/things?q=" <> keyword )
+    end
+end
